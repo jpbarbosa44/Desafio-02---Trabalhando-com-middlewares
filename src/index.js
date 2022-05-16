@@ -27,7 +27,7 @@ function checksCreateTodosUserAvailability(request, response, next) {
   const { user } = request;
 
   if(user.pro === false && user.todos.length >= 10){
-    return response.status(403).json({error: "You plan is limited at 10 todos"})
+    return response.status(403).json({error: "You have exceeded the to-do limit"})
   } 
  
   return next(); 
